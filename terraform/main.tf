@@ -2,7 +2,7 @@ data "template_file" "dwh_cfg" {
   template = file("${path.module}/dwh_cfg.tmpl")
 
   vars = {
-    redshift_endpoint = aws_redshift_cluster.redshift_cluster.endpoint
+    redshift_endpoint = split(":", aws_redshift_cluster.redshift_cluster.endpoint)[0]
     redshift_port     = aws_redshift_cluster.redshift_cluster.port
     iam_role_arn      = aws_iam_role.redshift_s3_access.arn
     db_name           = var.db_name

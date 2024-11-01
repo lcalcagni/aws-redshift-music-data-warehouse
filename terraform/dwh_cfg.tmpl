@@ -1,0 +1,14 @@
+[CLUSTER]
+HOST='${redshift_endpoint}'
+DB_NAME='${db_name}'
+DB_USER='${db_user}'
+DB_PASSWORD='${db_password}'
+DB_PORT='${redshift_port}'
+
+[IAM_ROLE]
+ARN='${iam_role_arn}'
+
+[S3]
+LOG_DATA='s3://udacity-dend/log_data'
+LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
+SONG_DATA='s3://udacity-dend/song_data'
